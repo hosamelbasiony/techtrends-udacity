@@ -8,6 +8,6 @@ spec:
     app: techtrends
     tag: udacity
   ports:
-    - port: {{ .Values.replicaCount }}
+    - port: {{ .Values.port }}
       targetPort: 3111
   type: LoadBalancer
