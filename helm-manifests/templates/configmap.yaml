@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-  version: alpine
+  version: udacity
 kind: ConfigMap
 metadata:
-  name: nginx-version
+  name: techtrends-version
   namespace: {{ .Values.namespace.name }}
