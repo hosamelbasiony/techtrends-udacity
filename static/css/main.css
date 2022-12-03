@@ -99,3 +99,17 @@ h2 {
   color: #444;
   text-decoration: none;
 }
+
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #252564;
+  font-weight: bold;
+  font-size: 1rem;
+}
