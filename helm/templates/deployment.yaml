@@ -1,10 +1,10 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
     app: techtrends
     tag: udacity
-  name: techtrends-udacity-helm
+  name: techtrends
   namespace: {{ .Values.namespace.name }}
 spec:
   replicas: {{ .Values.replicaCount }}
@@ -31,17 +31,17 @@ spec:
           requests:
             cpu: {{ .Values.resources.requests.CPU }}
             memory: {{ .Values.resources.requests.memory }}
-        #   limits:
-        #     cpu: {{ .Values.resources.limits.CPU }}
-        #     memory: {{ .Values.resources.limits.memory }}
-        # ports:
-        # - containerPort: {{ .Values.containerPort }}
-        # readinessProbe:
-        #   httpGet:
-        #     path: {{ .Values.livenessProbe.path }}
-        #     port: {{ .Values.containerPort }}
-        # livenessProbe:
-        #   httpGet:
-        #     path: {{ .Values.readinessProbe.path }}
-        #     port: {{ .Values.containerPort }}
+          limits:
+            cpu: {{ .Values.resources.limits.CPU }}
+            memory: {{ .Values.resources.limits.memory }}
+        ports:
+        - containerPort: {{ .Values.containerPort }}
+        readinessProbe:
+          httpGet:
+            path: {{ .Values.livenessProbe.path }}
+            port: {{ .Values.containerPort }}
+        livenessProbe:
+          httpGet:
+            path: {{ .Values.readinessProbe.path }}
+            port: {{ .Values.containerPort }}
 
