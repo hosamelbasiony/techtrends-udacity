@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  version: udacity
+kind: ConfigMap
+metadata:
+  name: techtrends
+  namespace: {{ .Values.namespace.name }}
