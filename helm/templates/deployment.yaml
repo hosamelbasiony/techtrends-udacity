@@ -4,7 +4,7 @@ metadata:
   labels:
     app: techtrends
     tag: udacity
-  name: techtrends-udacity-helm
+  name: techtrends
   namespace: {{ .Values.namespace.name }}
 spec:
   replicas: {{ .Values.replicaCount }}
@@ -25,9 +25,22 @@ spec:
     spec:
       containers:
       - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: {{ .Values.image.pullPolicy}}
         name: techtrends-udacity
         resources:
           requests:
             cpu: 50m
             memory: 256Mi
+          limits:
+            cpu: 50m
+            memory: 256Mi
+        ports:
+        - containerPort: 3111
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 3111
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3111
