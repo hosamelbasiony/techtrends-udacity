@@ -29,18 +29,18 @@ spec:
         name: techtrends-udacity
         resources:
           requests:
-            cpu: 50m
-            memory: 256Mi
+            cpu: {{ .Values.resources.requests.CPU }}
+            memory: {{ .Values.resources.requests.memory }}
           limits:
-            cpu: 50m
-            memory: 256Mi
+            cpu: {{ .Values.resources.limits.CPU }}
+            memory: {{ .Values.resources.limits.memory }}
         ports:
-        - containerPort: 3111
+        - containerPort: {{ .Values.containerPort }}
         readinessProbe:
           httpGet:
-            path: /healthz
-            port: 3111
+            path: {{ .Values.livenessProbe.path }}
+            port: {{ .Values.containerPort }}
         livenessProbe:
           httpGet:
-            path: /healthz
-            port: 3111
+            path: {{ .Values.readinessProbe.path }}
+            port: {{ .Values.containerPort }}
