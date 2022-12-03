@@ -3,7 +3,7 @@ namespace:
  
 image:
   repository: hosamelbasiony/techtrends-udacity
-  tag: latest
+  tag: v2.0
 
 replicaCount: 3
 

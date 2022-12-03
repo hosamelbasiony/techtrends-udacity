@@ -31,3 +31,16 @@ spec:
           requests:
             cpu: 50m
             memory: 256Mi
+          limits:
+            cpu: 50m
+            memory: 256Mi
+        ports:
+        - containerPort: 3111
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 3111
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3111
