@@ -8,6 +8,6 @@ spec:
     app: techtrends
     tag: udacity
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: {{ Values.service.targetPort }}
+  - port: {{ .Values.service.port }}
+    targetPort: {{ Values.service.targetPort }}
   type: LoadBalancer
