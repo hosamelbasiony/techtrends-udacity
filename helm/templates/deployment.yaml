@@ -26,7 +26,7 @@ spec:
       containers:
       - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy}}
-        name: techtrends-udacity
+        name: techtrends
         resources:
           requests:
             cpu: {{ .Values.resources.requests.CPU }}
@@ -34,6 +34,16 @@ spec:
           limits:
             cpu: {{ .Values.resources.limits.CPU }}
             memory: {{ .Values.resources.limits.memory }}
+        # ports:
+        # - containerPort: 3111
+        # readinessProbe:
+        #   httpGet:
+        #     path: /healthz
+        #     port: 3111
+        # livenessProbe:
+        #   httpGet:
+        #     path: /healthz
+        #     port: 3111
         ports:
         - containerPort: {{ .Values.containerPort }}
         readinessProbe:
