@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: loadbalancer-service
+  namespace: udacity-demo
+spec:
+  selector:
+    app: techtrends
+    tag: udacity
+  ports:
+    - port: 8765
+      targetPort: 3111
+  type: LoadBalancer
