@@ -1,0 +1,4 @@
+namespace:
+  name: techtrends-udacity-staging 
+
+port: 8766

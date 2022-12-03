@@ -1,4 +1,4 @@
 namespace:
   name: techtrends-udacity-prod 
 
-port: 8766
+port: 8767
