@@ -31,17 +31,17 @@ spec:
           requests:
             cpu: {{ .Values.resources.requests.CPU }}
             memory: {{ .Values.resources.requests.memory }}
-          limits:
-            cpu: {{ .Values.resources.limits.CPU }}
-            memory: {{ .Values.resources.limits.memory }}
-        ports:
-        - containerPort: {{ .Values.containerPort }}
-        readinessProbe:
-          httpGet:
-            path: {{ .Values.livenessProbe.path }}
-            port: {{ .Values.containerPort }}
-        livenessProbe:
-          httpGet:
-            path: {{ .Values.readinessProbe.path }}
-            port: {{ .Values.containerPort }}
+        #   limits:
+        #     cpu: {{ .Values.resources.limits.CPU }}
+        #     memory: {{ .Values.resources.limits.memory }}
+        # ports:
+        # - containerPort: {{ .Values.containerPort }}
+        # readinessProbe:
+        #   httpGet:
+        #     path: {{ .Values.livenessProbe.path }}
+        #     port: {{ .Values.containerPort }}
+        # livenessProbe:
+        #   httpGet:
+        #     path: {{ .Values.readinessProbe.path }}
+        #     port: {{ .Values.containerPort }}
 
