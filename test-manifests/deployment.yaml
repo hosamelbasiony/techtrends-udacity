@@ -5,7 +5,7 @@ metadata:
     app: techtrends
     tag: udacity
   name: techtrends-udacity
-  namespace: udacity-demo
+  namespace: techtrends-udacity
 spec:
   replicas: 3
   selector:

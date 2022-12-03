@@ -4,4 +4,4 @@ data:
 kind: ConfigMap
 metadata:
   name: nginx-version
-  namespace: udacity-demo
+  namespace: techtrends-udacity

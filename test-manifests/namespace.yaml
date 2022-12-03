@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   labels:
     tier: test
-  name: udacity-demo
+  name: techtrends-udacity

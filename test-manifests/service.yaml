@@ -5,7 +5,7 @@ metadata:
     app: nginx
     tag: alpine
   name: nginx-alpine-service
-  namespace: udacity-demo
+  namespace: techtrends-udacity
 spec:
   ports:
   - protocol: TCP
