@@ -43,4 +43,4 @@ jobs:
           platforms: linux/amd64
           push: true
           # tags: hosamelbasiony/techtrends-udacity:latest
-          tags: hosamelbasiony/techtrends-udacity:version1.0
+          tags: hosamelbasiony/techtrends-udacity:version1.1

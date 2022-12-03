@@ -3,6 +3,6 @@ namespace:
  
 image:
   repository: hosamelbasiony/techtrends-udacity
-  tag: version1.0
+  tag: version1.1
 
 replicaCount: 5

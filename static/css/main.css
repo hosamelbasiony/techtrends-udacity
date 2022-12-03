@@ -109,7 +109,7 @@ input[type=text], textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  color: #252564;
+  color: #424242;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
