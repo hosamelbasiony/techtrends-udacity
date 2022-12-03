@@ -24,7 +24,7 @@ spec:
         tag: udacity
     spec:
       containers:
-      - image: hosamelbasiony/techtrends-udacity
+      - image: hosamelbasiony/techtrends-udacity:version1.0
         imagePullPolicy: IfNotPresent
         name: techtrends-udacity
         resources:
