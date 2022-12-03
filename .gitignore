@@ -1,3 +1,5 @@
-secrets.txt
+env.local
+DockerfileBAK
+/test-manifests
 /argocd-demo
 /argocd
