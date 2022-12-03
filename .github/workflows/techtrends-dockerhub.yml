@@ -7,8 +7,8 @@ name: TechTrends - Package with Docker
 on:
   push:
     branches: [ main ]
-  # pull_request:
-  #   branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -42,4 +42,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: hosamelbasiony/techtrends-udacity:latest
+          tags: hosamelbasiony/techtrends-udacity:v2.0

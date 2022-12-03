@@ -7,10 +7,9 @@ service:
 replicaCount: 3
 
 resources:
-  resources:
-    requests:
-      memory : 90Mi
-      CPU : 300m
-    limits:
-      memory : 128Mi
-      CPU : 500m
+  requests:
+    memory : 90Mi
+    CPU : 300m
+  limits:
+    memory : 128Mi
+    CPU : 500m
