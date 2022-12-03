@@ -1,0 +1,11 @@
+apiVersion: v1
+name: techtrends-udacity-helm
+description: Install Udacity techtrends dev app deployment
+keywords:
+- udacity
+- python
+- techtrends 
+version: 1.0.0
+maintainers:
+- name: hosam 
+  email: Source@xyz.com

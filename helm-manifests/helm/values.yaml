@@ -1,0 +1,8 @@
+namespace:
+  name: techtrends-udacity
+ 
+image:
+  repository: hosamelbasiony/techtrends-udacity
+  tag: version1.0
+
+replicaCount: 5
