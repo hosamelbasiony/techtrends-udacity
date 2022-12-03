@@ -34,16 +34,6 @@ spec:
           limits:
             cpu: {{ .Values.resources.limits.CPU }}
             memory: {{ .Values.resources.limits.memory }}
-        # ports:
-        # - containerPort: 3111
-        # readinessProbe:
-        #   httpGet:
-        #     path: /healthz
-        #     port: 3111
-        # livenessProbe:
-        #   httpGet:
-        #     path: /healthz
-        #     port: 3111
         ports:
         - containerPort: {{ .Values.containerPort }}
         readinessProbe:
