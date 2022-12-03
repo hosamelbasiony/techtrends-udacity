@@ -3,5 +3,5 @@ data:
   version: udacity
 kind: ConfigMap
 metadata:
-  name: techtrends-version
+  name: techtrends
   namespace: {{ .Values.namespace.name }}

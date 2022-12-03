@@ -1,2 +1,4 @@
 namespace:
-  name: prod 
+  name: techtrends-udacity-prod 
+
+port: 98765

@@ -6,3 +6,5 @@ image:
   tag: version1.1
 
 replicaCount: 5
+
+port: 8765
