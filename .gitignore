@@ -3,3 +3,4 @@ DockerfileBAK
 /test-manifests
 /argocd-demo
 /argocd
+/project/.vagrant/
