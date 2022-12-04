@@ -1,6 +1,7 @@
 .env.*
 DockerfileBAK
 /test-manifests
+/helm-manifests
 /argocd-demo
 /argocd
 /project/.vagrant/
