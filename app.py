@@ -8,9 +8,11 @@ from werkzeug.exceptions import abort
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
 db_connection_count = 0
+
 def get_db_connection():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
+    global db_connection_count
     db_connection_count += 1
     return connection
 
@@ -117,6 +119,7 @@ def abhealthzout():
 @app.route('/metrics')
 def metrics():
     posts_count = get_posts_count()
+    global db_connection_count
     data = { "post_count": posts_count["posts_count"], "db_connection_count": db_connection_count }
     response = app.response_class(
         response=json.dumps(data),
