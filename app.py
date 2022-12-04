@@ -7,9 +7,11 @@ from werkzeug.exceptions import abort
 
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
+db_connection_count = 0
 def get_db_connection():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
+    db_connection_count += 1
     return connection
 
 # Function to get a post using its ID
@@ -32,14 +34,22 @@ def get_posts_count():
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'my secret key goes here'
 
-# handler = logging.StreamHandler(sys.stdout)
-# app.logger.addHandler(handler)
-# logging.basicConfig(
-#     filename='app.log',
-#     format='%(asctime)s %(levelname)-8s %(message)s',
-#     level=logging.DEBUG,
-#     datefmt='%Y-%m-%d %H:%M:%S'
-# )
+logFormatter = logging.Formatter("%(asctime)s [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s")
+rootLogger = logging.getLogger()
+
+fileHandler = logging.FileHandler("app.log")
+fileHandler.setFormatter(logFormatter)
+rootLogger.addHandler(fileHandler)
+
+stdout_handler = logging.StreamHandler(sys.stdout)
+stdout_handler.setLevel(logging.DEBUG)
+stdout_handler.setFormatter(logFormatter)
+rootLogger.addHandler(stdout_handler)
+
+stderr_handler = logging.StreamHandler(sys.stderr)
+stderr_handler.setLevel(logging.WARNING)
+stderr_handler.setFormatter(logFormatter)
+rootLogger.addHandler(stderr_handler)
 
 # Define the main route of the web application 
 @app.route('/')
@@ -107,7 +117,7 @@ def abhealthzout():
 @app.route('/metrics')
 def metrics():
     posts_count = get_posts_count()
-    data = { "post_count": posts_count["posts_count"], "db_connection_count": 0 }
+    data = { "post_count": posts_count["posts_count"], "db_connection_count": db_connection_count }
     response = app.response_class(
         response=json.dumps(data),
         status=200,
